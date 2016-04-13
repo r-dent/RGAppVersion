@@ -12,7 +12,7 @@
 		302488B41CBE6836002343AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302488B21CBE6836002343AE /* Main.storyboard */; };
 		302488B61CBE6836002343AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302488B51CBE6836002343AE /* Assets.xcassets */; };
 		302488B91CBE6836002343AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302488B71CBE6836002343AE /* LaunchScreen.storyboard */; };
-		302488C11CBE6867002343AE /* RGAppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302488C01CBE6867002343AE /* RGAppVersion.swift */; };
+		302488C71CBE7AB5002343AE /* RGAppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302488C61CBE7AB5002343AE /* RGAppVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		302488B51CBE6836002343AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302488B81CBE6836002343AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302488BA1CBE6836002343AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		302488C01CBE6867002343AE /* RGAppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGAppVersion.swift; sourceTree = "<group>"; };
+		302488C61CBE7AB5002343AE /* RGAppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGAppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +56,9 @@
 		302488AD1CBE6836002343AE /* AppVersion */ = {
 			isa = PBXGroup;
 			children = (
+				302488C51CBE7AB5002343AE /* Sources */,
 				302488AE1CBE6836002343AE /* AppDelegate.swift */,
 				302488B01CBE6836002343AE /* ViewController.swift */,
-				302488C01CBE6867002343AE /* RGAppVersion.swift */,
 				302488B21CBE6836002343AE /* Main.storyboard */,
 				302488B51CBE6836002343AE /* Assets.xcassets */,
 				302488B71CBE6836002343AE /* LaunchScreen.storyboard */,
@@ -66,6 +66,14 @@
 			);
 			path = AppVersion;
 			sourceTree = "<group>";
+		};
+		302488C51CBE7AB5002343AE /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				302488C61CBE7AB5002343AE /* RGAppVersion.swift */,
+			);
+			path = Sources;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -139,7 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302488B11CBE6836002343AE /* ViewController.swift in Sources */,
-				302488C11CBE6867002343AE /* RGAppVersion.swift in Sources */,
+				302488C71CBE7AB5002343AE /* RGAppVersion.swift in Sources */,
 				302488AF1CBE6836002343AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
