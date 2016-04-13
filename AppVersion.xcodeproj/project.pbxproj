@@ -12,6 +12,7 @@
 		302488B41CBE6836002343AE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302488B21CBE6836002343AE /* Main.storyboard */; };
 		302488B61CBE6836002343AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 302488B51CBE6836002343AE /* Assets.xcassets */; };
 		302488B91CBE6836002343AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 302488B71CBE6836002343AE /* LaunchScreen.storyboard */; };
+		302488C11CBE6867002343AE /* RGAppVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302488C01CBE6867002343AE /* RGAppVersion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		302488B51CBE6836002343AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		302488B81CBE6836002343AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		302488BA1CBE6836002343AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		302488C01CBE6867002343AE /* RGAppVersion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGAppVersion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				302488AE1CBE6836002343AE /* AppDelegate.swift */,
 				302488B01CBE6836002343AE /* ViewController.swift */,
+				302488C01CBE6867002343AE /* RGAppVersion.swift */,
 				302488B21CBE6836002343AE /* Main.storyboard */,
 				302488B51CBE6836002343AE /* Assets.xcassets */,
 				302488B71CBE6836002343AE /* LaunchScreen.storyboard */,
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				302488B11CBE6836002343AE /* ViewController.swift in Sources */,
+				302488C11CBE6867002343AE /* RGAppVersion.swift in Sources */,
 				302488AF1CBE6836002343AE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -250,6 +254,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppVersion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rg.AppVersion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -261,6 +266,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AppVersion/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = rg.AppVersion;
 				PRODUCT_NAME = "$(TARGET_NAME)";
