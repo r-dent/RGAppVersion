@@ -8,23 +8,23 @@
 
 import Foundation
 
-class RGAppVersion {
+public class RGAppVersion {
     
     enum RGAppVersionState {
         case NotDetermined, Installed, Updated, NothingChanged
     }
     
-    static let lastInstalledAppVersionKey = "rg.appVersion.lastInstalledAppVersion"
-    static let lastInstalledBuildKey = "rg.appVersion.lastInstalledAppversion"
+    private static let lastInstalledAppVersionKey = "rg.appVersion.lastInstalledAppVersion"
+    private static let lastInstalledBuildKey = "rg.appVersion.lastInstalledAppversion"
     
     private static var _lastInstalledAppVersion: RGAppVersion?
     private static var _currentAppVersion: RGAppVersion?
-    static var appVersionState = RGAppVersionState.NotDetermined
+    private static var _appVersionState = RGAppVersionState.NotDetermined
     
-    var appVersion: String?
-    var buildNumber: String?
+    public var appVersion: String?
+    public var buildNumber: String?
     
-    var combinedVersion: String {
+    public var combinedVersion: String {
         get {
             if let appVersion = appVersion, buildNumber = buildNumber {
                 return "\(appVersion)(\(buildNumber))"
@@ -35,7 +35,7 @@ class RGAppVersion {
     
     class var defaults: NSUserDefaults {get {return NSUserDefaults.standardUserDefaults()}}
     
-    init(appVersion: String?, buildNumber: String?) {
+    public init(appVersion: String?, buildNumber: String?) {
         self.appVersion = appVersion
         self.buildNumber = buildNumber
     }
@@ -46,8 +46,8 @@ class RGAppVersion {
         RGAppVersion.defaults.synchronize()
     }
     
-    class func determineAppVersionState() {
-        if appVersionState != .NotDetermined {
+    public class func determineAppVersionState() {
+        if _appVersionState != .NotDetermined {
             return
         }
         
@@ -65,45 +65,45 @@ class RGAppVersion {
         if _lastInstalledAppVersion?.appVersion == nil {
             _currentAppVersion?.setAsCurrentVersion()
             
-            appVersionState = .Installed
+            _appVersionState = .Installed
         }
         // App updated.
         else if _lastInstalledAppVersion?.combinedVersion != _currentAppVersion?.combinedVersion {
             _currentAppVersion?.setAsCurrentVersion()
             
-            appVersionState = .Updated
+            _appVersionState = .Updated
         }
         // Nothing changed.
         else {
-            appVersionState = .NothingChanged
+            _appVersionState = .NothingChanged
         }
     }
     
-    class func currentVersion() -> RGAppVersion {
-        if appVersionState == .NotDetermined {
+    public class func currentVersion() -> RGAppVersion {
+        if _appVersionState == .NotDetermined {
             RGAppVersion.determineAppVersionState()
         }
         return _currentAppVersion!
     }
     
-    class func lastVersion() -> RGAppVersion? {
-        if appVersionState == .NotDetermined {
+    public class func lastVersion() -> RGAppVersion? {
+        if _appVersionState == .NotDetermined {
             RGAppVersion.determineAppVersionState()
         }
         return (_lastInstalledAppVersion?.appVersion == nil) ? nil : _lastInstalledAppVersion
     }
     
-    class func appIsFreshInstalled() -> Bool {
-        if appVersionState == .NotDetermined {
+    public class func appIsFreshInstalled() -> Bool {
+        if _appVersionState == .NotDetermined {
             RGAppVersion.determineAppVersionState()
         }
-        return appVersionState == .Installed
+        return _appVersionState == .Installed
     }
     
-    class func appWasUpdated() -> Bool {
-        if appVersionState == .NotDetermined {
+    public class func appWasUpdated() -> Bool {
+        if _appVersionState == .NotDetermined {
             RGAppVersion.determineAppVersionState()
         }
-        return appVersionState == .Updated
+        return _appVersionState == .Updated
     }
 }
