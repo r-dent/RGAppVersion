@@ -24,6 +24,14 @@ class ViewController: UIViewController {
         else {
             lastVersionLabel.text = "App is fresh installed"
         }
+        
+        if RGAppVersion.appIsFreshInstalled() {
+            print("New installation")
+        }
+        
+        if RGAppVersion.appWasUpdated() {
+            print("App update from \(RGAppVersion.lastVersion()!.combinedVersion) to \(RGAppVersion.currentVersion().combinedVersion)")
+        }
     }
 
     override func didReceiveMemoryWarning() {
