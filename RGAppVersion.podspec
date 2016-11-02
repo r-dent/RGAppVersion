@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = 'RGAppVersion'
-  s.version      = '0.1.1'
+  s.version      = '0.1.2'
   s.description  = 'Simple class for accessing the iOS app version and track app updates.'
   s.summary      = 'Simple helper class for app versions.'
   s.homepage     = 'https://github.com/r-dent/RGAppVersion'
